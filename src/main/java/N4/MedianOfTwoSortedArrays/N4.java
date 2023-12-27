@@ -2,6 +2,8 @@ package N4.MedianOfTwoSortedArrays;
 
 import java.util.*;
 
+/*Учитывая два отсортированных массива nums1 и nums2 размер m и n соответственно, верните медиану двух отсортированных массивов.
+Общая сложность времени выполнения должна составлять O(log (m+n)).*/
 public class N4 {
     public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
         double answer = 0.0;
