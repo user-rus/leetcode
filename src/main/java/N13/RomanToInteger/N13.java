@@ -102,7 +102,6 @@ public class N13 {
 
 
     public static void main(String[] args) {
-        String s= "IX";
         System.out.println(romanToInt("IX"));
 
     }
