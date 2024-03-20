@@ -32,7 +32,8 @@ public class N13 {
         int sum = 0;
         int previous = 0;
 
-        byte[] bytes = s.getBytes();
+        byte[] bytes;
+        bytes = s.getBytes();
         for (byte b : bytes) {
             switch (b) {
                 case 73:
@@ -101,8 +102,11 @@ public class N13 {
 
 
     public static void main(String[] args) {
+        String s= "IX";
         System.out.println(romanToInt("IX"));
 
     }
+
+
 }
 
