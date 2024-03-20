@@ -22,76 +22,66 @@ C может быть помещен перед D (500) и M (1000), чтобы 
 Если задана римская цифра, преобразуйте ее в целое число.*/
 public class N13 {
     public static int romanToInt(String s) {
-        int i = 1;      //73
-        int v = 5;      //86
-        int x = 10;     //88
-        int l = 50;     //76
-        int c = 100;    //67
-        int d = 500;    //68
-        int m = 1000;   //77
         int sum = 0;
         int previous = 0;
-
-        byte[] bytes;
-        bytes = s.getBytes();
-        for (byte b : bytes) {
+        for (byte b : s.getBytes()) {
             switch (b) {
                 case 73:
-                    sum = sum + i;
-                    previous = i;
+                    sum = sum + 1;
+                    previous = 1;
                     break;
                 case 86:
-                    if (previous == i) {
-                        sum = sum + v - 2;
+                    if (previous == 1) {
+                        sum = sum + 3;
                         previous = 0;
                     } else {
-                        sum = sum + v;
-                        previous = v;
+                        sum = sum + 5;
+                        previous = 5;
                     }
                     break;
                 case 88:
-                    if (previous == i) {
-                        sum = sum + x - 2;
+                    if (previous == 1) {
+                        sum = sum + 8;
                         previous = 0;
                     } else {
-                        sum = sum + x;
-                        previous = x;
+                        sum = sum + 10;
+                        previous = 10;
                     }
                     break;
                 case 76:
-                    if (previous == x) {
-                        sum = sum + l - 20;
+                    if (previous == 10) {
+                        sum = sum + 30;
                         previous = 0;
                     } else {
-                        sum = sum + l;
-                        previous = l;
+                        sum = sum + 50;
+                        previous = 50;
                     }
                     break;
                 case 67:
-                    if (previous == x) {
-                        sum = sum + c - 20;
+                    if (previous == 10) {
+                        sum = sum + 80;
                         previous = 0;
                     } else {
-                        sum = sum + c;
-                        previous = c;
+                        sum = sum + 100;
+                        previous = 100;
                     }
                     break;
                 case 68:
-                    if (previous == c) {
-                        sum = sum + d - 200;
+                    if (previous == 100) {
+                        sum = sum + 300;
                         previous = 0;
                     } else {
-                        sum = sum + d;
-                        previous = d;
+                        sum = sum + 500;
+                        previous = 500;
                     }
                     break;
                 case 77:
-                    if (previous == c) {
-                        sum = sum + m - 200;
+                    if (previous == 100) {
+                        sum = sum + 800;
                         previous = 0;
                     } else {
-                        sum = sum + m;
-                        previous = m;
+                        sum = sum + 1000;
+                        previous = 1000;
                     }
                     break;
             }
@@ -102,7 +92,7 @@ public class N13 {
 
 
     public static void main(String[] args) {
-        System.out.println(romanToInt("IX"));
+        System.out.println(romanToInt("MCMXCIV"));
 
     }
 
